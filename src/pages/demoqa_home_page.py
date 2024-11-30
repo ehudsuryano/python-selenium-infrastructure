@@ -18,9 +18,9 @@ class DemoqaHomePage(BasePage):  # Inherit from BasePage
         """
         self.driver.get(self.URL)  # Use the URL attribute
 
-    def click_elements(self,driver):
+    def click_elements(self, driver):
         try:
-            card_handler.CardHandler.on_get_element(driver, "Elements").click()
+            card_handler.CardHandler.on_get_elements(driver, "Elements")[0].click()
             logger.info("Elements card was clicked")
         except Exception("element not found"):
             logger.error("Elements card was NOT clicked")

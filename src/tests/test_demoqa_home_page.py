@@ -49,7 +49,8 @@ def test_reach_elements_page(driver):
     home_page.click_elements(driver)
     logger.info("Loaded Elements Page")
     elements_page = DemoqaElementsPage(driver)
-    elements_page.click_side_menu_item(driver,"Text Box")
+    elements_page.click_side_menu_item(driver, "Text Box")
+    elements_page.type_text(driver, "userName", "Ehud Suryano")
     time.sleep(3)
     try:
         assert "https://demoqa.com/text-box" in elements_page.get_url(), "Page title mismatch"
