@@ -26,3 +26,10 @@ class DemoqaHomePage(BasePage):  # Inherit from BasePage
             logger.error("Elements card was NOT clicked")
         return
 
+    def click_widgets(self, driver):
+        try:
+            card_handler.CardHandler.on_get_elements(driver, "Widgets")[0].click()
+            logger.info("Widgets card was clicked")
+        except Exception("element not found"):
+            logger.error("Widgets card was NOT clicked")
+        return
