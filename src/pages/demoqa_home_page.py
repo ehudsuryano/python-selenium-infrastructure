@@ -20,7 +20,10 @@ class DemoqaHomePage(BasePage):  # Inherit from BasePage
 
     def click_elements(self, driver):
         try:
-            card_handler.CardHandler.on_get_elements(driver, "Elements")[0].click()
+
+            element = card_handler.CardHandler.on_get_elements(driver, "Elements")[0]
+            self.scroll_to_element(driver,element)
+            element.click()
             logger.info("Elements card was clicked")
         except Exception("element not found"):
             logger.error("Elements card was NOT clicked")
@@ -28,8 +31,14 @@ class DemoqaHomePage(BasePage):  # Inherit from BasePage
 
     def click_widgets(self, driver):
         try:
-            card_handler.CardHandler.on_get_elements(driver, "Widgets")[0].click()
+            element = card_handler.CardHandler.on_get_elements(driver, "Widgets")[0]
+            self.scroll_to_element(driver,element)
+            element.click()
             logger.info("Widgets card was clicked")
         except Exception("element not found"):
             logger.error("Widgets card was NOT clicked")
         return
+
+    def scroll_to_element(self, driver, element):
+        driver.execute_script("arguments[0].scrollIntoView(true);", element)
+        return driver

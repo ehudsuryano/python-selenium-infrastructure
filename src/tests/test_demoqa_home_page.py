@@ -18,7 +18,7 @@ def driver():
     driver.quit()
 
 
-@pytest.mark.skip
+#@pytest.mark.skip
 def test_home_page(driver):
     logger.info("Starting test for Home Page")
     home_page = DemoqaHomePage(driver)
@@ -35,7 +35,7 @@ def test_home_page(driver):
         raise
 
 
-@pytest.mark.skip
+#@pytest.mark.skip
 def test_reach_elements_page(driver):
     logger.info("Starting test for Elements Page")
     home_page = DemoqaHomePage(driver)
@@ -65,7 +65,7 @@ def test_reach_elements_page(driver):
 
 
 def test_reach_widgets_page(driver):
-    logger.info("Starting test for Elements Page")
+    logger.info("Starting test for Widgets Page")
     home_page = DemoqaHomePage(driver)
     home_page.load()
     logger.info("Loaded Home Page")
