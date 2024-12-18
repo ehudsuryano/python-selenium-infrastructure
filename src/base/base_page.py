@@ -29,7 +29,7 @@ class BasePage:
         """
         return self.driver.current_url
 
-    def scroll_to_element(self, driver, element_name):
+    def scroll_to_element_by_name(self, driver, element_name):
         element = driver.find_element(By.XPATH, f"//*[text()='{element_name}']")
         driver.execute_script("arguments[0].scrollIntoView(true);", element)
         return driver

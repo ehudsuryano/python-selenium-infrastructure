@@ -17,7 +17,7 @@ class WebDriverSetup:
 
         if browser == "chrome":
             chrome_options = ChromeOptions()
-            chrome_options.add_argument("--force-device-scale-factor=0.25")
+            chrome_options.add_argument("--force-device-scale-factor=0.50")
             driver = webdriver.Chrome(
                 service=ChromeService(ChromeDriverManager().install()),
                 options=chrome_options
