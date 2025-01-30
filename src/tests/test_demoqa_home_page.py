@@ -1,7 +1,5 @@
 import time
-
 import pytest
-import allure
 from src.pages.demoqa_home_page import DemoqaHomePage
 from src.pages.demoqa_elements_page import DemoqaElementsPage
 from src.base.webdriver_setup import WebDriverSetup
@@ -26,7 +24,7 @@ def test_home_page(driver):
     logger.info("Loaded Home Page")
 
     try:
-        assert "DEMOQA" in home_page.get_title(), "Page title mismatch"
+        assert "foo" in home_page.get_title(), "Page title mismatch"
         logger.info("Test passed")
     except AssertionError as e:
         # Capture screenshot on failure
